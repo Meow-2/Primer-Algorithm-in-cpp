@@ -4,15 +4,15 @@
 
 ## sort
 
-### selection sort
+[selection sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/selectionSort.h)  
 
-### insertion sort
+[insertion sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/insertionSort.h)
 
-### shell sort
+[shell sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/shellSort.h)
 
-### merge sort
+[merge sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/mergeSort.h)
 
-### quick sort
+[quick sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/quickSort.h)
 
 ## search
 
