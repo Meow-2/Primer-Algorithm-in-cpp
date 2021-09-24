@@ -21,11 +21,11 @@ void lessLGreaterR(T array[], int n, int &p0, int &p1)
             std::swap(array[indexL], array[indexE]);
             indexE++;
         }
-        if (array[indexE] == array[0])
+        else if (array[indexE] == array[0])
         {
             indexE++;
         }
-        if (array[indexE] > array[0])
+        else if (array[indexE] > array[0])
         {
             indexG--;
             std::swap(array[indexE], array[indexG]);

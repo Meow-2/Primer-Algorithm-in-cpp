@@ -7,7 +7,7 @@
 
 int main()
 {
-    int n = 40;
+    int n = 1000000;
     randomArray testArray = randomArray(n, 0, n / 2);
     if (n <= 50)
         std::cout << testArray << std::endl;
