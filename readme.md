@@ -1,6 +1,6 @@
 # This is a repository of my implement for some primer algorithm in cpp
 
-# Now have
+Now have:
 
 ## sort
 
