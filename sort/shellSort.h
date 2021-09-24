@@ -18,7 +18,7 @@ void shellSort(T array[], int n)
         {
             T aux = array[i];
             int j;
-            for (j = i - distance; array[j] > aux && j >= 0; j = j - distance)
+            for (j = i - distance; j >= 0 && array[j] > aux; j = j - distance)
             {
                 array[j + distance] = array[j];
             }
