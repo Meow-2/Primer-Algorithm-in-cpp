@@ -5,6 +5,7 @@
 #include <cassert>
 #include <ctime>
 #include <cmath>
+#include <string>
 //用于测试的数组，希望一个数组能测试多个算法并进行比较
 class randomArray
 {
@@ -13,9 +14,9 @@ public:
     randomArray(int n, int rangeL, int rangR, bool nearlyOrder = false);
     ~randomArray() { delete arrayPtr; }
     //判断数组是否排序正确
-    bool isCorrect(int *p, int n) const;
+    bool isCorrect(const int *p, int n) const;
     //测试排序算法的时间和正确性
-    void testSortAlgorithm(void (*sortFunc)(int[], int), char *p) const;
+    void testSortAlgorithm(void (*sortFunc)(int[], int), const char *p) const;
 
     friend std::ostream &operator<<(std::ostream &os, const randomArray &array)
     {
@@ -48,7 +49,7 @@ randomArray::randomArray(int n, int rangL, int rangR, bool nearlyOrder) : arrayN
             std::swap(arrayPtr[rand() % n], arrayPtr[rand() % n]);
     }
 }
-bool randomArray::isCorrect(int *p, int n) const
+bool randomArray::isCorrect(const int *p, int n) const
 {
     for (int i = 0; i + 1 < n; i++)
     {
@@ -58,7 +59,7 @@ bool randomArray::isCorrect(int *p, int n) const
     return true;
 }
 
-void randomArray::testSortAlgorithm(void (*sortFunc)(int[], int), char *p) const
+void randomArray::testSortAlgorithm(void (*sortFunc)(int[], int), const char *p) const
 {
     //创建临时数组用于排序，使原数组可以被多次利用
     int *aux = new int[arrayNum];
