@@ -1,4 +1,4 @@
-# This is a repository of my implement for some primer algorithm in cpp
+# My implement for some primer algorithm in cpp
 
 Now have:
 
