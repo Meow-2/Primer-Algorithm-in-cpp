@@ -12,8 +12,10 @@ void bubbleSort(T array[], int n)
         for (int i = 0; i + 1 < n; i++)
         {
             if (array[i] > array[i + 1])
+            {
                 std::swap(array[i], array[i + 1]);
-            flag = true;
+                flag = true;
+            }
         }
         n--;
     }
