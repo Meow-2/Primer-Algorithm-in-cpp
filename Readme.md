@@ -14,6 +14,8 @@ Now have:
 
 - [quick sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/quickSort.h)
 
+- [bubble sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/bubbleSort.h)
+
 ## search
 
 To be continued...
