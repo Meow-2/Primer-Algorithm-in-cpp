@@ -3,7 +3,7 @@
 #include <iostream>
 #include <cassert>
 #include <algorithm>
-
+#include <cmath>
 template <typename Item>
 class MaxHeap
 {
@@ -19,7 +19,7 @@ public:
     {
         data = new Item[capacity + 1];
     }
-    MaxHeap(Item arr[], int n, int capacity) : capacity(capacity), count(n)
+    MaxHeap(const Item arr[], int n, int capacity) : capacity(capacity), count(n)
     {
         data = new Item[capacity + 1];
         for (int i = 1; i <= n; i++)
@@ -47,19 +47,53 @@ public:
         shiftDown(1);
         return data[count--];
     }
-    void show();
+    std::ostream &show(std::ostream &os) const;
+    friend std::ostream &operator<<(std::ostream &os, const MaxHeap &maxHeap)
+    {
+        return maxHeap.show(os);
+    }
 };
+template <typename T>
+std::ostream &printNum(std::ostream &os, int n, T item)
+{
+    for (int i = 0; i < n; i++)
+        os << "  ";
+    os << item;
+    if (typeid(item).name() == "int" && item > 10)
+        os << ' ';
+    for (int i = 0; i < n; i++)
+        os << "  ";
+    os << "  ";
+    return os;
+}
 
 template <typename Item>
-void MaxHeap<Item>::show()
+std::ostream &MaxHeap<Item>::show(std::ostream &os) const
 {
+    int h = log2(count);          //层数，从零开始
+    int lastFloor = pow(2, h);    //最后一层能容纳的最大数量
+    int blankNum = lastFloor - 1; //第一层应打印的空格数
+    int rest = count;             //堆剩余元素的数量
+    for (int i = 0; i <= h; i++)
+    {
+        int j;
+        for (j = 0; j < fmin(rest, pow(2, i)); j++)
+        {
+            printNum(os, blankNum, data[(int)pow(2, i) + j]);
+        }
+        os << std::endl;
+        blankNum /= 2;
+        rest -= j;
+    }
+    return os;
 }
+
 template <typename Item>
 void MaxHeap<Item>::shiftUp(int k)
 {
     Item aux = data[k];
     while (k / 2 >= 1 && data[k / 2] < aux)
-    { //当节点k有父节点时
+    { //当节点k有父节点,且父节点小于子节点时
         data[k] = data[k / 2];
         k /= 2;
     }

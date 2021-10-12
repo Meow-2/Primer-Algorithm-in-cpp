@@ -17,6 +17,10 @@ public:
     bool isCorrect(const int *p, int n) const;
     //测试排序算法的时间和正确性
     void testSortAlgorithm(void (*sortFunc)(int[], int), const char *p) const;
+    const int *arrPtr() const
+    {
+        return arrayPtr;
+    }
 
     friend std::ostream &operator<<(std::ostream &os, const randomArray &array)
     {

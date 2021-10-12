@@ -9,7 +9,7 @@
 
 int main()
 {
-    int n = 10000;
+    int n = 500000;
     int rangL = 0;
     int rangR = n / 2;
     randomArray testArray = randomArray(n, rangL, rangR);              //大规模含重复元素数组
@@ -18,6 +18,7 @@ int main()
     {
         std::cout << "testArray: " << testArray << std::endl;
         std::cout << "nearlyOrderArray: " << nearlyOrderArray << std::endl;
+        std::cout << MaxHeap<int>(testArray.arrPtr(), n, n) << std::endl;
     }
     std::cout << "randomArray,range of (" << rangL << "," << rangR << ")" << std::endl;
     testArray.testSortAlgorithm(quickSort, "quickSort");
