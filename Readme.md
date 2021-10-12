@@ -6,6 +6,8 @@ Now have:
 
 - [selection sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/selectionSort.h)  
 
+- [bubble sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/bubbleSort.h)
+
 - [insertion sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/insertionSort.h)
 
 - [shell sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/shellSort.h)
@@ -14,7 +16,7 @@ Now have:
 
 - [quick sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/quickSort.h)
 
-- [bubble sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/bubbleSort.h)
+- [heap sort](https://github.com/Meow-2/Primer-Algorithm-in-cpp/blob/master/sort/heapSort.h)
 
 ## search
 
