@@ -5,6 +5,7 @@
 #include "mergeSort.h"
 #include "quickSort.h"
 #include "bubbleSort.h"
+#include "heapSort.h"
 
 int main()
 {
@@ -22,6 +23,7 @@ int main()
     testArray.testSortAlgorithm(quickSort, "quickSort");
     testArray.testSortAlgorithm(shellSort, "shellSort");
     testArray.testSortAlgorithm(mergeSort, "mergeSort");
+    testArray.testSortAlgorithm(heapSort, "heapSort");
     testArray.testSortAlgorithm(insertionSort, "insertionSort");
     testArray.testSortAlgorithm(selectionSort, "selectionSort");
     testArray.testSortAlgorithm(bubbleSort, "bubbleSort");
@@ -30,6 +32,7 @@ int main()
     nearlyOrderArray.testSortAlgorithm(shellSort, "shellSort");
     nearlyOrderArray.testSortAlgorithm(quickSort, "quickSort");
     nearlyOrderArray.testSortAlgorithm(mergeSort, "mergeSort");
+    nearlyOrderArray.testSortAlgorithm(heapSort, "heapSort");
     nearlyOrderArray.testSortAlgorithm(insertionSort, "insertionSort");
     nearlyOrderArray.testSortAlgorithm(selectionSort, "selectionSort");
     nearlyOrderArray.testSortAlgorithm(bubbleSort, "bubbleSort");

@@ -27,7 +27,7 @@ public:
 
 private:
     int arrayNum;
-    int *arrayPtr; //指向int数组的指针
+    int *arrayPtr; //指向int数组的指针,
 };
 
 randomArray::randomArray(int n, int rangL, int rangR, bool nearlyOrder) : arrayNum(n)
@@ -38,7 +38,7 @@ randomArray::randomArray(int n, int rangL, int rangR, bool nearlyOrder) : arrayN
     if (!nearlyOrder)
         for (int i = 0; i < n; i++)
             arrayPtr[i] = rand() % (rangR - rangL + 1) + rangL;
-    else
+    else if (nearlyOrder)
     {
         //生成几乎排好的数组，为了让数据尽量均匀分布，计算一个元素的重复次数
         int sameN = ceil((double)n / (rangR - rangL + 1));
