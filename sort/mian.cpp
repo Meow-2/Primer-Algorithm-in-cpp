@@ -9,7 +9,7 @@
 
 int main()
 {
-    int n = 500000;
+    int n = 1000000;
     int rangL = 0;
     int rangR = n / 2;
     randomArray testArray = randomArray(n, rangL, rangR);              //大规模含重复元素数组
@@ -22,18 +22,20 @@ int main()
     }
     std::cout << "randomArray,range of (" << rangL << "," << rangR << ")" << std::endl;
     testArray.testSortAlgorithm(quickSort, "quickSort");
+    testArray.testSortAlgorithm(heapSortLocal, "heapSortLocal");
+    testArray.testSortAlgorithm(heapSort, "heapSort");
     testArray.testSortAlgorithm(shellSort, "shellSort");
     testArray.testSortAlgorithm(mergeSort, "mergeSort");
-    testArray.testSortAlgorithm(heapSort, "heapSort");
     testArray.testSortAlgorithm(insertionSort, "insertionSort");
     testArray.testSortAlgorithm(selectionSort, "selectionSort");
     testArray.testSortAlgorithm(bubbleSort, "bubbleSort");
     std::cout << std::endl;
     std::cout << "nearlyOrderArray,range of (" << rangL << "," << rangR << ")" << std::endl;
-    nearlyOrderArray.testSortAlgorithm(shellSort, "shellSort");
     nearlyOrderArray.testSortAlgorithm(quickSort, "quickSort");
-    nearlyOrderArray.testSortAlgorithm(mergeSort, "mergeSort");
+    nearlyOrderArray.testSortAlgorithm(heapSortLocal, "heapSortLocal");
     nearlyOrderArray.testSortAlgorithm(heapSort, "heapSort");
+    nearlyOrderArray.testSortAlgorithm(shellSort, "shellSort");
+    nearlyOrderArray.testSortAlgorithm(mergeSort, "mergeSort");
     nearlyOrderArray.testSortAlgorithm(insertionSort, "insertionSort");
     nearlyOrderArray.testSortAlgorithm(selectionSort, "selectionSort");
     nearlyOrderArray.testSortAlgorithm(bubbleSort, "bubbleSort");
