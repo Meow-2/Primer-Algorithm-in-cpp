@@ -127,7 +127,7 @@ class IndexMaxHeap
 private:
     Item *data;   //最大堆数据
     int *index;   //数据的索引，用索引代替数据构建堆
-    int *rev;     //记录索引在堆中的位置
+    int *rev;     //记录索引在堆中的位置,与index相反的指针;reverse,反向的
     int count;    //当前堆中数据的个数
     int capacity; //索引堆的最大容量
     void changeIndex(int arrIndex, int arrData)
@@ -145,12 +145,24 @@ public:
         data = new Item[capacity];     //存储堆中的数据，从外部来看，数据应当是以一个普通数组的形式存在，所以data从零开始编号
         index = new int[capacity + 1]; //因为真正变成堆的是索引，索引从1开始计数，方便计算索引的父子节点
         rev = new int[capacity];       //索引的范围是[0,capacity)，故rev的容量为capacity即可
+        for (int i = 0; i < capacity; i++)
+        {
+            rev[i] = -1;
+            index[i] = -1;
+        }
+        index[capacity] = -1;
     }
     IndexMaxHeap(Item array[], int n, int capacity) : capacity(capacity), count(n)
     {
         data = new Item[capacity];     //存储堆中的数据，从外部来看，数据应当是以一个普通数组的形式存在，所以data从零开始编号
         index = new int[capacity + 1]; //因为真正变成堆的是索引，索引从1开始计数，方便计算索引的父子节点
         rev = new int[capacity];       //索引的范围是[0,capacity)，故rev的容量为capacity即可
+        for (int i = 0; i < capacity; i++)
+        {
+            rev[i] = -1;
+            index[i] = -1;
+        }
+        index[capacity] = -1;
         for (int i = 0; i < count; i++)
         {
             data[i] = array[i];
@@ -186,6 +198,18 @@ public:
         count++;
         changeIndex(count, k);
         shiftUp(count);
+    }
+    void change(int k, Item item)
+    {
+
+        data[k] = item;
+        shiftUp(rev[k]);
+        shiftDown(rev[k]);
+    }
+    bool contain(int k) const //堆中是否包含数组编号k
+    {
+        assert(k >= 1 && k <= capacity);
+        return rev[k] >= 1 && rev[k] <= count;
     }
 };
 
