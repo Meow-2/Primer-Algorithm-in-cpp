@@ -24,7 +24,7 @@ int main()
     testArray.testSortAlgorithm(quickSort, "quickSort");
     testArray.testSortAlgorithm(heapSortLocal, "heapSortLocal");
     testArray.testSortAlgorithm(heapSort<int, MaxHeap<int>>, "heapSort");
-    testArray.testSortAlgorithm(heapSort<int, IndexMaxHeap<int>>, "IndexHeapSort");
+    testArray.testSortAlgorithm(heapSort<int, IndexMaxHeap<int>>, "IndexMaxHeapSort");
     testArray.testSortAlgorithm(shellSort, "shellSort");
     testArray.testSortAlgorithm(mergeSort, "mergeSort");
     testArray.testSortAlgorithm(insertionSort, "insertionSort");
@@ -35,7 +35,7 @@ int main()
     nearlyOrderArray.testSortAlgorithm(quickSort, "quickSort");
     nearlyOrderArray.testSortAlgorithm(heapSortLocal, "heapSortLocal");
     nearlyOrderArray.testSortAlgorithm(heapSort<int, MaxHeap<int>>, "heapSort");
-    nearlyOrderArray.testSortAlgorithm(heapSort<int, IndexMaxHeap<int>>, "IndexHeapSort");
+    nearlyOrderArray.testSortAlgorithm(heapSort<int, IndexMaxHeap<int>>, "IndexMaxHeapSort");
     nearlyOrderArray.testSortAlgorithm(shellSort, "shellSort");
     nearlyOrderArray.testSortAlgorithm(mergeSort, "mergeSort");
     nearlyOrderArray.testSortAlgorithm(insertionSort, "insertionSort");

@@ -6,6 +6,12 @@ template <typename T, typename T1 = MaxHeap<T>>
 void heapSort(T array[], int n)
 {
     T1 maxHeap = T1(array, n, n);
+    //用于测试insert()
+    // T1 maxHeap = T1(n);
+    // for (int i = 0; i < n; i++)
+    // {
+    //     maxHeap.insert(i, array[i]);
+    // }
     for (int i = n - 1; i >= 0; i--)
     {
         array[i] = maxHeap.extractMax();

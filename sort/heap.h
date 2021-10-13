@@ -35,7 +35,7 @@ public:
     ~MaxHeap() { delete[] data; }
     bool isEmpty() const { return count == 0; }
     int size() const { return count; }
-    void insert(Item item)
+    void insert(int dummy, Item item) //dummy是一个假参数，为了配合IndexMaxHeap.insert()使用模板
     {
         assert(count < capacity);
         data[++count] = item;
@@ -178,6 +178,14 @@ public:
         count--;
         shiftDown(1);
         return data[index[count + 1]];
+    }
+    void insert(int k, Item item)
+    {
+        assert(k < capacity);
+        data[k] = item;
+        count++;
+        changeIndex(count, k);
+        shiftUp(count);
     }
 };
 
