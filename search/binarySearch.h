@@ -27,7 +27,7 @@ int binarySearch(T arr[], int n, T target)
     int l = 0, r = n - 1;
     while (l <= r)
     {
-        //int mid = (l + r) / 2;            //两个很大int型相加有可能溢出
+        //int mid = (l + r) / 2;            //两个很大int型相加有可能溢出，所以使用下面的写法
         int mid = l + (l - r) / 2;
         if (arr[mid] == T)
             return mid;
