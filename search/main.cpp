@@ -23,5 +23,7 @@ int main()
         std::cout << std::endl;
     }
     BST<int, int> a0;
+    a0.insert(5, 4);
+    a0.insert(6, 4);
     return 0;
 }

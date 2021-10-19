@@ -30,7 +30,7 @@ public:
         return count;
     }
     void insert(Key key, Value value);
-    void insertNode(Node *nodeR, Node *nodeI)
+    void insertNode(Node *&nodeR, Node *&nodeI)
     {
         //nodeR为根节点，nodeI为要插入的节点
         if (nodeR == nullptr)
