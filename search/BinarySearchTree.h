@@ -30,12 +30,14 @@ public:
         return count;
     }
     void insert(Key key, Value value);
-    Node *insertNode(Node *node, Key key, Value value);
+    Node *insert(Node *node, Key key, Value value);
     void insertCycle(Key key, Value value);
+    Value *search(Node *node, Key key);
+    Value *search(Key key);
 };
 
 template <typename Key, typename Value>
-BST<Key, Value>::Node *BST<Key, Value>::insertNode(Node *node, Key key, Value value)
+BST<Key, Value>::Node *BST<Key, Value>::insert(Node *node, Key key, Value value)
 {
     //node为根节点，nodeI为要插入的节点,返回值为插入的树的根
     if (node == nullptr)
@@ -49,17 +51,17 @@ BST<Key, Value>::Node *BST<Key, Value>::insertNode(Node *node, Key key, Value va
     }
     else if (node->key < key)
     {
-        node->right = insertNode(node->right, key, value);
+        node->right = insert(node->right, key, value);
     }
     else
-        node->left = insertNode(node->left, key, value);
+        node->left = insert(node->left, key, value);
     return node;
 }
 
 template <typename Key, typename Value>
 void BST<Key, Value>::insert(Key key, Value value)
 {
-    root = insertNode(root, key, value);
+    root = insert(root, key, value);
 }
 
 template <typename Key, typename Value>
@@ -97,4 +99,27 @@ void BST<Key, Value>::insertCycle(Key key, Value value)
     else
         nodeLast->left = new Node(key, value);
 }
+template <typename Key, typename Value>
+Value *BST<Key, Value>::search(Node *node, Key key)
+{
+    if (node == nullptr)
+        return nullptr;
+    if (node->key == key)
+        return &(node->Value);
+    else if (node->key < key)
+    {
+        return search(node->right, key);
+    }
+    else
+    {
+        return search(node->left, key);
+    }
+}
+
+template <typename Key, typename Value>
+Value *BST<Key, Value>::search(Key key)
+{
+    return search(root, key);
+}
+
 #endif

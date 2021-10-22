@@ -1,6 +1,6 @@
 # My implement for some primer algorithm in cpp
 
-Now have:
+学习liuyubo老师数据结构时的练手
 
 ## sort
 
